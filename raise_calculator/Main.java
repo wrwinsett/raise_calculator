@@ -5,10 +5,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+
 public class Main {
 	public static void main(String[] args) {
 		String employeesFolder = "employees.txt";
 		File employeeData = new File(employeesFolder);
+		EmployeeRecord employeeRecord = null;
 		
 		if (employeeData.exists()) {
             String searchKeyword = "Name";
@@ -20,14 +22,14 @@ public class Main {
                 while ((line = br.readLine()) != null) {
                     lineNumber++;
                     if (line.contains(searchKeyword)) {
-                        System.out.println(line);
-                        for (int i = 0; i < 2; i++) {
-                            line = br.readLine();
-                            if (line != null) {
-                                System.out.println(line);
-                            }
-                    }
-                }
+                    	String name = line.trim().split(":")[1].trim();
+                        String salary = br.readLine().trim().split(":")[1].trim();
+                        String travel = br.readLine().trim().split(":")[1].trim();
+                        employeeRecord = new EmployeeRecord(name, salary, travel);
+                        
+                        System.out.println(employeeRecord);
+                        }
+                    
                 }
             } catch (IOException e) {
                 e.printStackTrace();

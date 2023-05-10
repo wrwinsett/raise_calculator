@@ -27,6 +27,10 @@ public class Main {
                         employeeRecord = new EmployeeRecord(name, salary, travel);
 
                         System.out.println(employeeRecord);
+                        
+                        if (employeeRecord.getTravel() > 100) {
+                            System.out.println(name + " is up for a raise!");
+                        }
                     }
                 }
             } catch (IOException e) {

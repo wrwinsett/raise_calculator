@@ -6,4 +6,9 @@ public class EmployeeRecord {
 		// TODO Auto-generated constructor stub
 	}
 
+	public int getTravel() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

@@ -15,13 +15,16 @@ public class Main {
 
         if (employeeData.exists()) {
             try (BufferedReader br = new BufferedReader(new FileReader(employeesFolder))) {
+            	//uses the buffered reader to read the string value I assigned to the text file
                 String line;
                 int lineNumber = 0;
 
                 while ((line = br.readLine()) != null) {
                     lineNumber++;
                     if (line.contains(SEARCH_KEYWORD)) {
+                    	//search keyword defined up top as name
                         String name = extractValue(line);
+                        //uses extracted Value method we made on line where search was found
                         String salary = extractValue(br.readLine());
                         String travel = extractValue(br.readLine());
                         employeeRecord = new EmployeeRecord(name, salary, travel);
@@ -43,5 +46,8 @@ public class Main {
 
     private static String extractValue(String line) {
         return line.replaceAll(".*:", "").trim();
+        //replace all method takes everything before the semicolon and replaces it with nothing
+        //".*" everything before
+        //the trim method cleans up any whitespace
     }
 }

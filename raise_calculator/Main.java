@@ -32,7 +32,13 @@ public class Main {
                         System.out.println(employeeRecord);
                         
                         if (employeeRecord.multiplier() >= 1) {
-                            System.out.println(name + " is up for a raise of " + employeeRecord.raise(employeeRecord.multiplier()));
+                            System.out.println(name + " is up for a raise of $" + employeeRecord.raise(employeeRecord.multiplier()));
+                            System.out.println("----------------");
+                        }
+                        
+                        else {
+                        	System.out.println(name + " is performing at reason for their salary.");
+                        	System.out.println("----------------");
                         }
                     }
                 }

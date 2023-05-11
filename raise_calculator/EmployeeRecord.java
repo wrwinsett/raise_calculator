@@ -31,7 +31,7 @@ public class EmployeeRecord {
     }
     
     public double raise(double d) {
-    	return salary/d; 
+    	return Math.round(salary/d); 
     }
 
     public String toString() {

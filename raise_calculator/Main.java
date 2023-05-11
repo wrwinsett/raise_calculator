@@ -31,14 +31,15 @@ public class Main {
 
                         System.out.println(employeeRecord);
                         
-                        if (employeeRecord.getTravel() > 100) {
-                            System.out.println(name + " is up for a raise!");
+                        if (employeeRecord.multiplier() >= 1) {
+                            System.out.println(name + " is up for a raise of " + employeeRecord.raise(employeeRecord.multiplier()));
                         }
                     }
                 }
             } catch (IOException e) {
                 System.err.println("Error reading employee data file: " + e.getMessage());
             }
+     
         } else {
             System.err.println("Employee data file not found: " + employeesFolder);
         }

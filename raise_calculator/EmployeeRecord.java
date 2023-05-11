@@ -11,6 +11,7 @@ public class EmployeeRecord {
 		this.name = name;
         this.salary = Double.parseDouble(salary);
         this.travel = Double.parseDouble(travel);
+        //the Double.parseDouble allows us to parse the string for a double and convert it
     }
 
     public String getName() {
@@ -23,6 +24,14 @@ public class EmployeeRecord {
 
     public double getTravel() {
         return travel;
+    }
+    
+    public double multiplier() {
+        return travel / 100.0;
+    }
+    
+    public double raise(double d) {
+    	return salary/d; 
     }
 
     public String toString() {
